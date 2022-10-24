@@ -66,7 +66,7 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if(score == brickRowCount*brickColumnCount) {
-            alert("GG Winner :)");
+            alert("GG tu as gagné !! :)");
             document.location.reload();
           }
         }
@@ -140,7 +140,7 @@ function draw() {
     else {
       lives--;
       if(!lives) {
-        alert("T'es mort ! Noob !");
+        alert("T'es mort ! Try again !!");
         document.location.reload();
       }
       else {
