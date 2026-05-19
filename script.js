@@ -85,7 +85,16 @@ function drawBall() {
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = "#D3D3D3";
+  ctx.beginPath();
+  ctx.rect(brickX, brickY, brickWidth, brickHeight);
+  ctx.shadowColor = "#bb86fc"; 
+  ctx.shadowBlur = 10;
+  ctx.fillStyle = `rgb(${value}, ${value}, ${value})`;
+  ctx.fill();
+  ctx.closePath();
+  ctx.shadowBlur = 0;
+  ctx.shadowColor = "transparent";
+  ctx.fillStyle = "#c0c0ff";
   ctx.fill();
   ctx.closePath();
 }
@@ -100,8 +109,8 @@ function drawBricks() {
         ctx.beginPath();
         ctx.rect(brickX, brickY, brickWidth, brickHeight);
         var max = Math.max(1, brickColumnCount - 1);
-        var value = Math.floor(60 + (255 - 60) * (c / max));
-        ctx.fillStyle = `rgb(${value}, ${value}, ${value})`;
+        var value = Math.floor(120 + (255 - 120) * (c / max));
+        ctx.fillStyle = `rgb(${value}, ${value - 20}, 255)`;
         ctx.fill();
         ctx.closePath();
       }
@@ -110,13 +119,13 @@ function drawBricks() {
 }
 function drawScore() {
   ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
+  ctx.fillStyle = "#d8bfff";
   ctx.fillText("Score: "+score, 8, 20);
   ctx.background = "#000000";
 }
 function drawLives() {
   ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
+  ctx.fillStyle = "#d8bfff";
   ctx.fillText("Lives: "+lives, canvas.width-65, 20);
 }
 
