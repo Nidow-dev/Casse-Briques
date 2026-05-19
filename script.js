@@ -66,7 +66,7 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if(score == brickRowCount*brickColumnCount) {
-            alert("Victoire ! Tous les blocs sont détruits ! :)");
+            alert("Victoire ! Tous les blocs sont détruits !! :)");
             document.location.reload();
           }
         }
