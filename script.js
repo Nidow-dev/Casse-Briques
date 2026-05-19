@@ -66,7 +66,7 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if(score == brickRowCount*brickColumnCount) {
-            alert("GG tu as gagné !! :)");
+            alert("Victoire ! Tous les blocs sont détruits ! :)");
             document.location.reload();
           }
         }
@@ -140,7 +140,7 @@ function draw() {
     else {
       lives--;
       if(!lives) {
-        alert("T'es mort ! Try again !!");
+        alert("Game Over ! Réessaie !");
         document.location.reload();
       }
       else {
