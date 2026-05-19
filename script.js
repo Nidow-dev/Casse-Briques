@@ -82,21 +82,19 @@ function drawBall() {
   ctx.fill();
   ctx.closePath();
 }
+
 function drawPaddle() {
   ctx.beginPath();
-
   ctx.shadowColor = "#bb86fc";
   ctx.shadowBlur = 10;
-
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
   ctx.fillStyle = "#c0c0ff";
   ctx.fill();
-
   ctx.closePath();
-
   ctx.shadowBlur = 0;
   ctx.shadowColor = "transparent";
 }
+
 function drawBricks() {
   for(var c=0; c<brickColumnCount; c++) {
     for(var r=0; r<brickRowCount; r++) {
