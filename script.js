@@ -84,19 +84,18 @@ function drawBall() {
 }
 function drawPaddle() {
   ctx.beginPath();
-  ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-  ctx.beginPath();
-  ctx.rect(brickX, brickY, brickWidth, brickHeight);
-  ctx.shadowColor = "#bb86fc"; 
+
+  ctx.shadowColor = "#bb86fc";
   ctx.shadowBlur = 10;
-  ctx.fillStyle = `rgb(${value}, ${value}, ${value})`;
-  ctx.fill();
-  ctx.closePath();
-  ctx.shadowBlur = 0;
-  ctx.shadowColor = "transparent";
+
+  ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
   ctx.fillStyle = "#c0c0ff";
   ctx.fill();
+
   ctx.closePath();
+
+  ctx.shadowBlur = 0;
+  ctx.shadowColor = "transparent";
 }
 function drawBricks() {
   for(var c=0; c<brickColumnCount; c++) {
