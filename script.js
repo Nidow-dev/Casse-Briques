@@ -99,7 +99,9 @@ function drawBricks() {
         bricks[c][r].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = "#850606";
+        var max = brickColumnCount;
+        var value = Math.floor(60 + (255 - 60) * (c / (max - 1)));
+        ctx.fillStyle = `rgb(${value}, ${value}, ${value})`;
         ctx.fill();
         ctx.closePath();
       }
